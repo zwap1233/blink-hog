@@ -677,6 +677,10 @@
 
 //MODULE DECLARATION
  module design_1_processing_system7_0_0 (
+  ENET0_MDIO_MDC,
+  ENET0_MDIO_O,
+  ENET0_MDIO_T,
+  ENET0_MDIO_I,
   M_AXI_GP0_ARVALID,
   M_AXI_GP0_AWVALID,
   M_AXI_GP0_BREADY,
@@ -802,6 +806,10 @@
 
 //INPUT AND OUTPUT PORTS
 
+      output  ENET0_MDIO_MDC;
+      output  ENET0_MDIO_O;
+      output  ENET0_MDIO_T;
+      input  ENET0_MDIO_I;
       output  M_AXI_GP0_ARVALID;
       output  M_AXI_GP0_AWVALID;
       output  M_AXI_GP0_BREADY;
@@ -867,6 +875,9 @@
 
 //REG DECLARATIONS
 
+      reg ENET0_MDIO_MDC;
+      reg ENET0_MDIO_O;
+      reg ENET0_MDIO_T;
       reg M_AXI_GP0_ARVALID;
       reg M_AXI_GP0_AWVALID;
       reg M_AXI_GP0_BREADY;

@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-// Date        : Tue May 26 10:23:54 2026
+// Date        : Tue Jun  2 09:26:41 2026
 // Host        : fid2312 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/fid/hog-projects/blink/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0_sim_netlist.v
@@ -16,7 +16,11 @@
 (* CHECK_LICENSE_TYPE = "design_1_processing_system7_0_0,processing_system7_v5_5_processing_system7,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "processing_system7_v5_5_processing_system7,Vivado 2024.1" *) 
 (* NotValidForBitStream *)
 module design_1_processing_system7_0_0
-   (M_AXI_GP0_ARVALID,
+   (ENET0_MDIO_MDC,
+    ENET0_MDIO_O,
+    ENET0_MDIO_T,
+    ENET0_MDIO_I,
+    M_AXI_GP0_ARVALID,
     M_AXI_GP0_AWVALID,
     M_AXI_GP0_BREADY,
     M_AXI_GP0_RREADY,
@@ -78,6 +82,10 @@ module design_1_processing_system7_0_0
     PS_SRSTB,
     PS_CLK,
     PS_PORB);
+  (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDC" *) output ENET0_MDIO_MDC;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_O" *) output ENET0_MDIO_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_T" *) output ENET0_MDIO_T;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_I" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME MDIO_ETHERNET_0, CAN_DEBUG false" *) input ENET0_MDIO_I;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARVALID" *) output M_AXI_GP0_ARVALID;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWVALID" *) output M_AXI_GP0_AWVALID;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 BREADY" *) output M_AXI_GP0_BREADY;
@@ -160,6 +168,10 @@ module design_1_processing_system7_0_0
   wire DDR_VRN;
   wire DDR_VRP;
   wire DDR_WEB;
+  wire ENET0_MDIO_I;
+  wire ENET0_MDIO_MDC;
+  wire ENET0_MDIO_O;
+  wire ENET0_MDIO_T;
   wire FCLK_CLK0;
   wire FCLK_RESET0_N;
   wire [53:0]MIO;
@@ -221,9 +233,6 @@ module design_1_processing_system7_0_0
   wire NLW_inst_DMA3_RSTN_UNCONNECTED;
   wire NLW_inst_ENET0_GMII_TX_EN_UNCONNECTED;
   wire NLW_inst_ENET0_GMII_TX_ER_UNCONNECTED;
-  wire NLW_inst_ENET0_MDIO_MDC_UNCONNECTED;
-  wire NLW_inst_ENET0_MDIO_O_UNCONNECTED;
-  wire NLW_inst_ENET0_MDIO_T_UNCONNECTED;
   wire NLW_inst_ENET0_PTP_DELAY_REQ_RX_UNCONNECTED;
   wire NLW_inst_ENET0_PTP_DELAY_REQ_TX_UNCONNECTED;
   wire NLW_inst_ENET0_PTP_PDELAY_REQ_RX_UNCONNECTED;
@@ -573,7 +582,7 @@ module design_1_processing_system7_0_0
   (* C_USE_S_AXI_HP2 = "0" *) 
   (* C_USE_S_AXI_HP3 = "0" *) 
   (* HW_HANDOFF = "design_1_processing_system7_0_0.hwdef" *) 
-  (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1600.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>" *) 
+  (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>" *) 
   (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
   design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7 inst
        (.CAN0_PHY_RX(1'b0),
@@ -649,10 +658,10 @@ module design_1_processing_system7_0_0
         .ENET0_GMII_TX_CLK(1'b0),
         .ENET0_GMII_TX_EN(NLW_inst_ENET0_GMII_TX_EN_UNCONNECTED),
         .ENET0_GMII_TX_ER(NLW_inst_ENET0_GMII_TX_ER_UNCONNECTED),
-        .ENET0_MDIO_I(1'b0),
-        .ENET0_MDIO_MDC(NLW_inst_ENET0_MDIO_MDC_UNCONNECTED),
-        .ENET0_MDIO_O(NLW_inst_ENET0_MDIO_O_UNCONNECTED),
-        .ENET0_MDIO_T(NLW_inst_ENET0_MDIO_T_UNCONNECTED),
+        .ENET0_MDIO_I(ENET0_MDIO_I),
+        .ENET0_MDIO_MDC(ENET0_MDIO_MDC),
+        .ENET0_MDIO_O(ENET0_MDIO_O),
+        .ENET0_MDIO_T(ENET0_MDIO_T),
         .ENET0_PTP_DELAY_REQ_RX(NLW_inst_ENET0_PTP_DELAY_REQ_RX_UNCONNECTED),
         .ENET0_PTP_DELAY_REQ_TX(NLW_inst_ENET0_PTP_DELAY_REQ_TX_UNCONNECTED),
         .ENET0_PTP_PDELAY_REQ_RX(NLW_inst_ENET0_PTP_PDELAY_REQ_RX_UNCONNECTED),
@@ -1282,7 +1291,7 @@ endmodule
 (* C_USE_S_AXI_ACP = "0" *) (* C_USE_S_AXI_GP0 = "0" *) (* C_USE_S_AXI_GP1 = "0" *) 
 (* C_USE_S_AXI_HP0 = "0" *) (* C_USE_S_AXI_HP1 = "0" *) (* C_USE_S_AXI_HP2 = "0" *) 
 (* C_USE_S_AXI_HP3 = "0" *) (* HW_HANDOFF = "design_1_processing_system7_0_0.hwdef" *) (* ORIG_REF_NAME = "processing_system7_v5_5_processing_system7" *) 
-(* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1600.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>" *) (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
+(* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>" *) (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
 module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system7
    (CAN0_PHY_TX,
     CAN0_PHY_RX,
@@ -2673,6 +2682,10 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire DDR_VRN;
   wire DDR_VRP;
   wire DDR_WEB;
+  wire ENET0_MDIO_I;
+  wire ENET0_MDIO_MDC;
+  wire ENET0_MDIO_O;
+  wire ENET0_MDIO_T;
   wire ENET0_MDIO_T_n;
   wire ENET1_MDIO_T_n;
   wire FCLK_CLK0;
@@ -3164,8 +3177,6 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   wire PS7_i_n_149;
   wire PS7_i_n_150;
   wire PS7_i_n_151;
-  wire PS7_i_n_16;
-  wire PS7_i_n_17;
   wire PS7_i_n_188;
   wire PS7_i_n_189;
   wire PS7_i_n_19;
@@ -3892,9 +3903,6 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   assign ENET0_GMII_TXD[0] = \<const0> ;
   assign ENET0_GMII_TX_EN = \<const0> ;
   assign ENET0_GMII_TX_ER = \<const0> ;
-  assign ENET0_MDIO_MDC = \<const0> ;
-  assign ENET0_MDIO_O = \<const0> ;
-  assign ENET0_MDIO_T = \<const0> ;
   assign ENET0_PTP_DELAY_REQ_RX = \<const0> ;
   assign ENET0_PTP_DELAY_REQ_TX = \<const0> ;
   assign ENET0_PTP_PDELAY_REQ_RX = \<const0> ;
@@ -5100,6 +5108,11 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
   BIBUF DDR_WEB_BIBUF
        (.IO(buffered_DDR_WEB),
         .PAD(DDR_WEB));
+  LUT1 #(
+    .INIT(2'h1)) 
+    ENET0_MDIO_T_INST_0
+       (.I0(ENET0_MDIO_T_n),
+        .O(ENET0_MDIO_T));
   GND GND
        (.G(\<const0> ));
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -5173,9 +5186,9 @@ module design_1_processing_system7_0_0_processing_system7_v5_5_processing_system
         .EMIOENET0GMIITXD(NLW_PS7_i_EMIOENET0GMIITXD_UNCONNECTED[7:0]),
         .EMIOENET0GMIITXEN(NLW_PS7_i_EMIOENET0GMIITXEN_UNCONNECTED),
         .EMIOENET0GMIITXER(NLW_PS7_i_EMIOENET0GMIITXER_UNCONNECTED),
-        .EMIOENET0MDIOI(1'b0),
-        .EMIOENET0MDIOMDC(PS7_i_n_16),
-        .EMIOENET0MDIOO(PS7_i_n_17),
+        .EMIOENET0MDIOI(ENET0_MDIO_I),
+        .EMIOENET0MDIOMDC(ENET0_MDIO_MDC),
+        .EMIOENET0MDIOO(ENET0_MDIO_O),
         .EMIOENET0MDIOTN(ENET0_MDIO_T_n),
         .EMIOENET0PTPDELAYREQRX(PS7_i_n_19),
         .EMIOENET0PTPDELAYREQTX(PS7_i_n_20),
