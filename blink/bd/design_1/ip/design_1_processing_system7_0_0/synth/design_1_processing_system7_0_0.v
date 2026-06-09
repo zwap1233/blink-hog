@@ -58,10 +58,18 @@ AXI_GP1_THREAD_ID_WIDTH=12,C_NUM_F2P_INTR_INPUTS=1,C_IRQ_F2P_MODE=DIRECT,C_DQ_WI
 ,C_GP1_EN_MODIFIABLE_TXN=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_processing_system7_0_0 (
-  ENET0_MDIO_MDC,
-  ENET0_MDIO_O,
-  ENET0_MDIO_T,
-  ENET0_MDIO_I,
+  GPIO_I,
+  GPIO_O,
+  GPIO_T,
+  I2C1_SDA_I,
+  I2C1_SDA_O,
+  I2C1_SDA_T,
+  I2C1_SCL_I,
+  I2C1_SCL_O,
+  I2C1_SCL_T,
+  USB0_PORT_INDCTL,
+  USB0_VBUS_PWRSELECT,
+  USB0_VBUS_PWRFAULT,
   M_AXI_GP0_ARVALID,
   M_AXI_GP0_AWVALID,
   M_AXI_GP0_BREADY,
@@ -126,15 +134,30 @@ module design_1_processing_system7_0_0 (
   PS_PORB
 );
 
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDC" *)
-output wire ENET0_MDIO_MDC;
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_O" *)
-output wire ENET0_MDIO_O;
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_T" *)
-output wire ENET0_MDIO_T;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME MDIO_ETHERNET_0, CAN_DEBUG false" *)
-(* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 MDIO_ETHERNET_0 MDIO_I" *)
-input wire ENET0_MDIO_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0 TRI_I" *)
+input wire [63 : 0] GPIO_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0 TRI_O" *)
+output wire [63 : 0] GPIO_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0 TRI_T" *)
+output wire [63 : 0] GPIO_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SDA_I" *)
+input wire I2C1_SDA_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SDA_O" *)
+output wire I2C1_SDA_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SDA_T" *)
+output wire I2C1_SDA_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SCL_I" *)
+input wire I2C1_SCL_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SCL_O" *)
+output wire I2C1_SCL_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SCL_T" *)
+output wire I2C1_SCL_T;
+(* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 PORT_INDCTL" *)
+output wire [1 : 0] USB0_PORT_INDCTL;
+(* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRSELECT" *)
+output wire USB0_VBUS_PWRSELECT;
+(* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRFAULT" *)
+input wire USB0_VBUS_PWRFAULT;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARVALID" *)
 output wire M_AXI_GP0_ARVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWVALID" *)
@@ -331,9 +354,9 @@ inout wire PS_PORB;
     .CAN1_PHY_RX(1'B0),
     .ENET0_GMII_TX_EN(),
     .ENET0_GMII_TX_ER(),
-    .ENET0_MDIO_MDC(ENET0_MDIO_MDC),
-    .ENET0_MDIO_O(ENET0_MDIO_O),
-    .ENET0_MDIO_T(ENET0_MDIO_T),
+    .ENET0_MDIO_MDC(),
+    .ENET0_MDIO_O(),
+    .ENET0_MDIO_T(),
     .ENET0_PTP_DELAY_REQ_RX(),
     .ENET0_PTP_DELAY_REQ_TX(),
     .ENET0_PTP_PDELAY_REQ_RX(),
@@ -351,7 +374,7 @@ inout wire PS_PORB;
     .ENET0_GMII_RX_DV(1'B0),
     .ENET0_GMII_RX_ER(1'B0),
     .ENET0_GMII_TX_CLK(1'B0),
-    .ENET0_MDIO_I(ENET0_MDIO_I),
+    .ENET0_MDIO_I(1'B0),
     .ENET0_EXT_INTIN(1'B0),
     .ENET0_GMII_RXD(8'B0),
     .ENET1_GMII_TX_EN(),
@@ -379,21 +402,21 @@ inout wire PS_PORB;
     .ENET1_MDIO_I(1'B0),
     .ENET1_EXT_INTIN(1'B0),
     .ENET1_GMII_RXD(8'B0),
-    .GPIO_I(64'B0),
-    .GPIO_O(),
-    .GPIO_T(),
+    .GPIO_I(GPIO_I),
+    .GPIO_O(GPIO_O),
+    .GPIO_T(GPIO_T),
     .I2C0_SDA_I(1'B0),
     .I2C0_SDA_O(),
     .I2C0_SDA_T(),
     .I2C0_SCL_I(1'B0),
     .I2C0_SCL_O(),
     .I2C0_SCL_T(),
-    .I2C1_SDA_I(1'B0),
-    .I2C1_SDA_O(),
-    .I2C1_SDA_T(),
-    .I2C1_SCL_I(1'B0),
-    .I2C1_SCL_O(),
-    .I2C1_SCL_T(),
+    .I2C1_SDA_I(I2C1_SDA_I),
+    .I2C1_SDA_O(I2C1_SDA_O),
+    .I2C1_SDA_T(I2C1_SDA_T),
+    .I2C1_SCL_I(I2C1_SCL_I),
+    .I2C1_SCL_O(I2C1_SCL_O),
+    .I2C1_SCL_T(I2C1_SCL_T),
     .PJTAG_TCK(1'B0),
     .PJTAG_TMS(1'B0),
     .PJTAG_TDI(1'B0),
@@ -486,9 +509,9 @@ inout wire PS_PORB;
     .TRACE_CLK_OUT(),
     .TRACE_CTL(),
     .TRACE_DATA(),
-    .USB0_PORT_INDCTL(),
-    .USB0_VBUS_PWRSELECT(),
-    .USB0_VBUS_PWRFAULT(1'B0),
+    .USB0_PORT_INDCTL(USB0_PORT_INDCTL),
+    .USB0_VBUS_PWRSELECT(USB0_VBUS_PWRSELECT),
+    .USB0_VBUS_PWRFAULT(USB0_VBUS_PWRFAULT),
     .USB1_PORT_INDCTL(),
     .USB1_VBUS_PWRSELECT(),
     .USB1_VBUS_PWRFAULT(1'B0),
