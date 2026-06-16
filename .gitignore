@@ -98,4 +98,4 @@ _info
 **.qpg
 **.qtl
 
-petalinux/
+petalinux/*/
