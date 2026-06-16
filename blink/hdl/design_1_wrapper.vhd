@@ -35,7 +35,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    led_0 : out STD_LOGIC
+    led_0 : out STD_LOGIC;
+    led_1 : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -43,6 +44,7 @@ architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
     led_0 : out STD_LOGIC;
+    led_1 : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -90,6 +92,7 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      led_0 => led_0
+      led_0 => led_0,
+      led_1 => led_1
     );
 end STRUCTURE;

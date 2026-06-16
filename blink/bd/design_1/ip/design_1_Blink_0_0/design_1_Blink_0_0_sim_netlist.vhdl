@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
--- Date        : Tue May 26 10:21:53 2026
+-- Date        : Tue Jun 16 11:36:33 2026
 -- Host        : fid2312 running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/fid/hog-projects/blink/bd/design_1/ip/design_1_Blink_0_0/design_1_Blink_0_0_sim_netlist.vhdl
@@ -18,17 +18,18 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI is
   port (
     axi_rvalid_reg_0 : out STD_LOGIC;
-    led : out STD_LOGIC;
+    led_0 : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     axi_awready_reg_0 : out STD_LOGIC;
     s00_axi_arready : out STD_LOGIC;
+    led_1 : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
     s00_axi_rready : in STD_LOGIC;
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
@@ -79,7 +80,7 @@ architecture STRUCTURE of design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI is
   signal axi_rvalid_i_1_n_0 : STD_LOGIC;
   signal \^axi_rvalid_reg_0\ : STD_LOGIC;
   signal i_reset : STD_LOGIC;
-  signal \^led\ : STD_LOGIC;
+  signal \^led_0\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 31 downto 7 );
   signal r0 : STD_LOGIC_VECTOR ( 31 downto 1 );
   signal \r0[0]_i_2_n_0\ : STD_LOGIC;
@@ -104,7 +105,7 @@ architecture STRUCTURE of design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI is
 begin
   axi_awready_reg_0 <= \^axi_awready_reg_0\;
   axi_rvalid_reg_0 <= \^axi_rvalid_reg_0\;
-  led <= \^led\;
+  led_0 <= \^led_0\;
   s00_axi_bvalid <= \^s00_axi_bvalid\;
 axi_awready_i_1: unisim.vcomponents.LUT6
     generic map(
@@ -158,7 +159,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => r1(0),
-      I1 => \^led\,
+      I1 => \^led_0\,
       I2 => r3(0),
       I3 => s00_axi_araddr(1),
       I4 => s00_axi_araddr(0),
@@ -855,6 +856,14 @@ axi_rvalid_reg: unisim.vcomponents.FDRE
       Q => \^axi_rvalid_reg_0\,
       R => '0'
     );
+led_1_INST_0: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => r1(0),
+      O => led_1
+    );
 \r0[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
@@ -915,7 +924,7 @@ axi_rvalid_reg: unisim.vcomponents.FDRE
       C => s00_axi_aclk,
       CE => \r0[0]_i_2_n_0\,
       D => s00_axi_wdata(0),
-      Q => \^led\,
+      Q => \^led_0\,
       R => i_reset
     );
 \r0_reg[10]\: unisim.vcomponents.FDRE
@@ -1294,13 +1303,13 @@ axi_rvalid_reg: unisim.vcomponents.FDRE
     );
 \r1[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2000"
+      INIT => X"0080"
     )
         port map (
       I0 => \^axi_awready_reg_0\,
-      I1 => s00_axi_awaddr(1),
-      I2 => s00_axi_wstrb(0),
-      I3 => s00_axi_awaddr(0),
+      I1 => s00_axi_wstrb(0),
+      I2 => s00_axi_awaddr(0),
+      I3 => s00_axi_awaddr(1),
       O => \r1[7]_i_1_n_0\
     );
 \r1_reg[0]\: unisim.vcomponents.FDRE
@@ -2463,17 +2472,18 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_Blink_0_0_Blink is
   port (
     axi_rvalid_reg : out STD_LOGIC;
-    led : out STD_LOGIC;
+    led_0 : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     axi_awready_reg : out STD_LOGIC;
     s00_axi_arready : out STD_LOGIC;
+    led_1 : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
     s00_axi_rready : in STD_LOGIC;
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
@@ -2490,7 +2500,8 @@ Blink_slave_lite_v1_0_S00_AXI_inst: entity work.design_1_Blink_0_0_Blink_slave_l
      port map (
       axi_awready_reg_0 => axi_awready_reg,
       axi_rvalid_reg_0 => axi_rvalid_reg,
-      led => led,
+      led_0 => led_0,
+      led_1 => led_1,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(1 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
@@ -2534,7 +2545,8 @@ entity design_1_Blink_0_0 is
     s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_rready : in STD_LOGIC;
-    led : out STD_LOGIC
+    led_0 : out STD_LOGIC;
+    led_1 : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of design_1_Blink_0_0 : entity is true;
@@ -2592,7 +2604,8 @@ U0: entity work.design_1_Blink_0_0_Blink
      port map (
       axi_awready_reg => \^s00_axi_wready\,
       axi_rvalid_reg => s00_axi_rvalid,
-      led => led,
+      led_0 => led_0,
+      led_1 => led_1,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(3 downto 2),
       s00_axi_aresetn => s00_axi_aresetn,

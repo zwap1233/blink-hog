@@ -76,7 +76,8 @@ ENTITY design_1_Blink_0_0 IS
     s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_rvalid : OUT STD_LOGIC;
     s00_axi_rready : IN STD_LOGIC;
-    led : OUT STD_LOGIC
+    led_0 : OUT STD_LOGIC;
+    led_1 : OUT STD_LOGIC
   );
 END design_1_Blink_0_0;
 
@@ -110,7 +111,8 @@ ARCHITECTURE design_1_Blink_0_0_arch OF design_1_Blink_0_0 IS
       s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_rvalid : OUT STD_LOGIC;
       s00_axi_rready : IN STD_LOGIC;
-      led : OUT STD_LOGIC
+      led_0 : OUT STD_LOGIC;
+      led_1 : OUT STD_LOGIC
     );
   END COMPONENT Blink;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -176,6 +178,7 @@ BEGIN
       s00_axi_rresp => s00_axi_rresp,
       s00_axi_rvalid => s00_axi_rvalid,
       s00_axi_rready => s00_axi_rready,
-      led => led
+      led_0 => led_0,
+      led_1 => led_1
     );
 END design_1_Blink_0_0_arch;

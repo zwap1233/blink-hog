@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-// Date        : Tue May 26 10:21:52 2026
+// Date        : Tue Jun 16 11:36:33 2026
 // Host        : fid2312 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/fid/hog-projects/blink/bd/design_1/ip/design_1_Blink_0_0/design_1_Blink_0_0_sim_netlist.v
@@ -38,7 +38,8 @@ module design_1_Blink_0_0
     s00_axi_rresp,
     s00_axi_rvalid,
     s00_axi_rready,
-    led);
+    led_0,
+    led_1);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_BUSIF s00_axi, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s00_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 s00_axi_aresetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME s00_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s00_axi AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME s00_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [3:0]s00_axi_awaddr;
@@ -60,10 +61,12 @@ module design_1_Blink_0_0
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s00_axi RRESP" *) output [1:0]s00_axi_rresp;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s00_axi RVALID" *) output s00_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s00_axi RREADY" *) input s00_axi_rready;
-  output led;
+  output led_0;
+  output led_1;
 
   wire \<const0> ;
-  wire led;
+  wire led_0;
+  wire led_1;
   wire s00_axi_aclk;
   wire [3:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -91,7 +94,8 @@ module design_1_Blink_0_0
   design_1_Blink_0_0_Blink U0
        (.axi_awready_reg(s00_axi_wready),
         .axi_rvalid_reg(s00_axi_rvalid),
-        .led(led),
+        .led_0(led_0),
+        .led_1(led_1),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[3:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -111,34 +115,36 @@ endmodule
 (* ORIG_REF_NAME = "Blink" *) 
 module design_1_Blink_0_0_Blink
    (axi_rvalid_reg,
-    led,
+    led_0,
     s00_axi_rdata,
     axi_awready_reg,
     s00_axi_arready,
+    led_1,
     s00_axi_bvalid,
     s00_axi_rready,
     s00_axi_wdata,
     s00_axi_aclk,
-    s00_axi_araddr,
     s00_axi_awaddr,
     s00_axi_wstrb,
+    s00_axi_araddr,
     s00_axi_arvalid,
     s00_axi_aresetn,
     s00_axi_bready,
     s00_axi_awvalid,
     s00_axi_wvalid);
   output axi_rvalid_reg;
-  output led;
+  output led_0;
   output [31:0]s00_axi_rdata;
   output axi_awready_reg;
   output s00_axi_arready;
+  output led_1;
   output s00_axi_bvalid;
   input s00_axi_rready;
   input [31:0]s00_axi_wdata;
   input s00_axi_aclk;
-  input [1:0]s00_axi_araddr;
   input [1:0]s00_axi_awaddr;
   input [3:0]s00_axi_wstrb;
+  input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
   input s00_axi_aresetn;
   input s00_axi_bready;
@@ -147,7 +153,8 @@ module design_1_Blink_0_0_Blink
 
   wire axi_awready_reg;
   wire axi_rvalid_reg;
-  wire led;
+  wire led_0;
+  wire led_1;
   wire s00_axi_aclk;
   wire [1:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -166,7 +173,8 @@ module design_1_Blink_0_0_Blink
   design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI Blink_slave_lite_v1_0_S00_AXI_inst
        (.axi_awready_reg_0(axi_awready_reg),
         .axi_rvalid_reg_0(axi_rvalid_reg),
-        .led(led),
+        .led_0(led_0),
+        .led_1(led_1),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -186,34 +194,36 @@ endmodule
 (* ORIG_REF_NAME = "Blink_slave_lite_v1_0_S00_AXI" *) 
 module design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI
    (axi_rvalid_reg_0,
-    led,
+    led_0,
     s00_axi_rdata,
     axi_awready_reg_0,
     s00_axi_arready,
+    led_1,
     s00_axi_bvalid,
     s00_axi_rready,
     s00_axi_wdata,
     s00_axi_aclk,
-    s00_axi_araddr,
     s00_axi_awaddr,
     s00_axi_wstrb,
+    s00_axi_araddr,
     s00_axi_arvalid,
     s00_axi_aresetn,
     s00_axi_bready,
     s00_axi_awvalid,
     s00_axi_wvalid);
   output axi_rvalid_reg_0;
-  output led;
+  output led_0;
   output [31:0]s00_axi_rdata;
   output axi_awready_reg_0;
   output s00_axi_arready;
+  output led_1;
   output s00_axi_bvalid;
   input s00_axi_rready;
   input [31:0]s00_axi_wdata;
   input s00_axi_aclk;
-  input [1:0]s00_axi_araddr;
   input [1:0]s00_axi_awaddr;
   input [3:0]s00_axi_wstrb;
+  input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
   input s00_axi_aresetn;
   input s00_axi_bready;
@@ -259,7 +269,8 @@ module design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI
   wire axi_rvalid_i_1_n_0;
   wire axi_rvalid_reg_0;
   wire i_reset;
-  wire led;
+  wire led_0;
+  wire led_1;
   wire [31:7]p_0_in;
   wire [31:1]r0;
   wire \r0[0]_i_2_n_0 ;
@@ -330,7 +341,7 @@ module design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI
     .INIT(64'hF0AAFFCCF0AA00CC)) 
     \axi_rdata[0]_i_1 
        (.I0(r1[0]),
-        .I1(led),
+        .I1(led_0),
         .I2(r3[0]),
         .I3(s00_axi_araddr[1]),
         .I4(s00_axi_araddr[0]),
@@ -863,6 +874,11 @@ module design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI
         .R(1'b0));
   LUT1 #(
     .INIT(2'h1)) 
+    led_1_INST_0
+       (.I0(r1[0]),
+        .O(led_1));
+  LUT1 #(
+    .INIT(2'h1)) 
     \r0[0]_i_1 
        (.I0(s00_axi_aresetn),
         .O(i_reset));
@@ -904,7 +920,7 @@ module design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(\r0[0]_i_2_n_0 ),
         .D(s00_axi_wdata[0]),
-        .Q(led),
+        .Q(led_0),
         .R(i_reset));
   FDRE #(
     .INIT(1'b0)) 
@@ -1179,12 +1195,12 @@ module design_1_Blink_0_0_Blink_slave_lite_v1_0_S00_AXI
         .I3(s00_axi_awaddr[0]),
         .O(\r1[31]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h2000)) 
+    .INIT(16'h0080)) 
     \r1[7]_i_1 
        (.I0(axi_awready_reg_0),
-        .I1(s00_axi_awaddr[1]),
-        .I2(s00_axi_wstrb[0]),
-        .I3(s00_axi_awaddr[0]),
+        .I1(s00_axi_wstrb[0]),
+        .I2(s00_axi_awaddr[0]),
+        .I3(s00_axi_awaddr[1]),
         .O(\r1[7]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 

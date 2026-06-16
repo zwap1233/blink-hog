@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-// Date        : Tue May 26 10:21:52 2026
+// Date        : Tue Jun 16 11:36:33 2026
 // Host        : fid2312 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/fid/hog-projects/blink/bd/design_1/ip/design_1_Blink_0_0/design_1_Blink_0_0_stub.v
@@ -19,8 +19,8 @@ module design_1_Blink_0_0(s00_axi_aclk, s00_axi_aresetn,
   s00_axi_awaddr, s00_axi_awprot, s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, 
   s00_axi_wstrb, s00_axi_wvalid, s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, 
   s00_axi_bready, s00_axi_araddr, s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, 
-  s00_axi_rdata, s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, led)
-/* synthesis syn_black_box black_box_pad_pin="s00_axi_aresetn,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,led" */
+  s00_axi_rdata, s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, led_0, led_1)
+/* synthesis syn_black_box black_box_pad_pin="s00_axi_aresetn,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,led_0,led_1" */
 /* synthesis syn_force_seq_prim="s00_axi_aclk" */;
   input s00_axi_aclk /* synthesis syn_isclock = 1 */;
   input s00_axi_aresetn;
@@ -43,5 +43,6 @@ module design_1_Blink_0_0(s00_axi_aclk, s00_axi_aresetn,
   output [1:0]s00_axi_rresp;
   output s00_axi_rvalid;
   input s00_axi_rready;
-  output led;
+  output led_0;
+  output led_1;
 endmodule

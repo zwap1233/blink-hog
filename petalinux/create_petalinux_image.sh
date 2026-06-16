@@ -19,6 +19,8 @@ fi
 
 (cd $PRJ_NAME; petalinux-build)
 
+(cd $PRJ_NAME; petalinux-config -c kernel)
+
 (cd $PRJ_NAME; petalinux-package boot --force --fsbl $IMG_FOLDER/zynq_fsbl.elf --u-boot $IMG_FOLDER/u-boot.elf --fpga $BIT_FILE)
 
 (cd $PRJ_NAME; petalinux-package wic)

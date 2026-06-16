@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
---Date        : Wed Jun  3 10:45:25 2026
+--Date        : Tue Jun 16 11:35:37 2026
 --Host        : fid2312 running 64-bit Ubuntu 22.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -35,7 +35,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    led_0 : out STD_LOGIC
+    led_0 : out STD_LOGIC;
+    led_1 : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -63,7 +64,8 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    led_0 : out STD_LOGIC
+    led_0 : out STD_LOGIC;
+    led_1 : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -90,6 +92,7 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      led_0 => led_0
+      led_0 => led_0,
+      led_1 => led_1
     );
 end STRUCTURE;

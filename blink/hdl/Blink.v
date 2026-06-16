@@ -41,7 +41,8 @@ module Blink #(
     output wire s00_axi_rvalid,
     input wire s00_axi_rready,
 
-	output wire led
+	output wire led_0,
+    output wire led_1
 );
   // Instantiation of Axi Bus Interface S00_AXI
   Blink_slave_lite_v1_0_S00_AXI #(
@@ -77,7 +78,8 @@ module Blink #(
   );
 
   wire [C_S00_AXI_DATA_WIDTH-1:0] r0, r1, r2, r3;
-  assign led = r0[0];
+  assign led_0 = r0[0];
+  assign led_1 = ~r1[0];
 
   // Add user logic here
 
