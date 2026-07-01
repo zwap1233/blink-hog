@@ -1,0 +1,12 @@
+services:
+  yoctocontainer:
+    image: petalinuxcontainer
+    container_name: petalinuxcontainer
+    hostname: petalinuxcontainer
+    stdin_open: true
+    tty: true
+
+    volumes:
+      - .:/home/wouter/work
+      - ../bin:/home/wouter/bin
+      - /opt/xilinx/2025.2/Petalinux:/opt/xilinx/2025.2/Petalinux

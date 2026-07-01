@@ -2,7 +2,7 @@ HOG_DO:=./Hog/Do
 PRJ:=blink
 PRJ_FILE:=./Projects/$(PRJ)/$(PRJ).xpr
 
-.PHONEY: all gui petalinux clean-all clean clean-petalinux
+.PHONY: clean clean-petalinux
 
 all: $(PRJ_FILE)
 	$(HOG_DO) WORKFLOW $(PRJ)
@@ -12,9 +12,6 @@ gui: $(PRJ_FILE)
 
 $(PRJ_FILE):
 	$(HOG_DO) CREATE $(PRJ)
-
-petalinux:
-	./petalinux/create_petalinux_image.sh
 
 clean-all: clean clean-petalinux
 
