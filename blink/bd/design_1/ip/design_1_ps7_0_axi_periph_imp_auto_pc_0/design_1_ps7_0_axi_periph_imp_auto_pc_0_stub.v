@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Tue Jul  7 11:41:00 2026
+// Date        : Tue Jul  7 11:40:59 2026
 // Host        : fid2310 running 64-bit Ubuntu 26.04 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/fid/blink-hog/blink/bd/design_1/ip/design_1_ps7_0_axi_periph_imp_auto_pc_0/design_1_ps7_0_axi_periph_imp_auto_pc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_ps7_0_axi_periph_imp_auto_pc_0 -prefix
+//               design_1_ps7_0_axi_periph_imp_auto_pc_0_ design_1_ps7_0_axi_periph_imp_auto_pc_0_stub.v
 // Design      : design_1_ps7_0_axi_periph_imp_auto_pc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
