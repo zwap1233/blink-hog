@@ -17,10 +17,10 @@ RUN rm -rf /var/lib/apt-lists/*
 RUN echo "dash dash/sh boolean false" | debconf-set-selections
 RUN dpkg-reconfigure dash
 
-RUN groupadd wouter -g 1000
-RUN useradd -ms /bin/bash -p wouter wouter -u 1000 -g 1000 && \
-        usermod -aG sudo wouter && \
-        echo "wouter:wouter" | chpasswd
+RUN groupadd xilinx -g 1002
+RUN useradd -ms /bin/bash -p xilinx xilinx -u 1000 -g 1002 && \
+        usermod -aG sudo xilinx && \
+        echo "xilinx:xilinx" | chpasswd
 
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
@@ -28,10 +28,10 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 
 ENV LANG en_US.utf8
 
-WORKDIR /home/wouter/work
-RUN chown -R wouter:wouter /home/wouter/work
+WORKDIR /home/xilinx/work
+RUN chown -R xilinx:xilinx /home/xilinx/work
 
-USER wouter
+USER xilinx
 
 RUN echo "source /opt/xilinx/2025.2/Petalinux/settings.sh" >> ~/.bashrc
 

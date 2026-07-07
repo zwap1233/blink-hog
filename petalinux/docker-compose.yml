@@ -7,6 +7,6 @@ services:
     tty: true
 
     volumes:
-      - .:/home/wouter/work
-      - ../bin:/home/wouter/bin
+      - .:/home/xilinx/work
+      - ../bin:/home/xilinx/bin
       - /opt/xilinx/2025.2/Petalinux:/opt/xilinx/2025.2/Petalinux
