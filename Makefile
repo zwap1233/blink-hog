@@ -17,7 +17,6 @@ clean-all: clean clean-petalinux
 
 clean:
 	rm -rf ./SimulationLib/
-	rm -rf ./bin/
 	rm -rf ./Projects/
 	rm -rf *.jou
 	rm -rf *.log

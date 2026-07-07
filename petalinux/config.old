@@ -1,0 +1,116 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# PetaLinux System Configuration
+#
+
+#
+# Linux Components Selection
+#
+
+#
+# Auto Config Settings
+#
+
+#
+# Subsystem Hardware Settings
+#
+
+#
+# Memory Settings
+#
+
+#
+# Serial Settings
+#
+
+#
+# Ethernet Settings
+#
+
+#
+# Flash Settings
+#
+
+#
+# SD/SDIO Settings
+#
+
+#
+# DT Settings
+#
+
+#
+# Kernel Bootargs
+#
+
+#
+# FPGA Manager
+#
+
+#
+# FSBL Configuration
+#
+
+#
+# u-boot Configuration
+#
+
+#
+# u-boot script configuration
+#
+
+#
+# JTAG/DDR image offsets
+#
+
+#
+# QSPI/OSPI image offsets
+#
+
+#
+# NAND image offsets
+#
+
+#
+# Linux Configuration
+#
+
+#
+# Image Packaging Configuration
+#
+
+#
+# Firmware Version Configuration
+#
+
+#
+# Yocto Settings
+#
+
+#
+# TMPDIR Location
+#
+
+#
+# Devtool Workspace Location
+#
+
+#
+# Parallel thread execution
+#
+
+#
+# Add pre-mirror url 
+#
+
+#
+# Local sstate feeds settings
+#
+
+#
+# Network sstate feeds URL
+#
+
+#
+# User Layers
+#
