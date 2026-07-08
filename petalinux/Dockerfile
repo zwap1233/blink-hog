@@ -2,8 +2,8 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-RUN apt-get install -yq sudo build-essential git nano vim\
+RUN apt-get update && \
+    apt-get install -yq sudo build-essential git nano vim\
           python3-yaml libncursesw5 \
           python3 man bash diffstat gawk chrpath wget cpio \
           texinfo lzop apt-utils bc screen libncurses5-dev locales \
