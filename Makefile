@@ -21,6 +21,7 @@ clean:
 	rm -rf *.jou
 	rm -rf *.log
 	rm -rf *.str
+	rm -rf ./NA/
 
 clean-petalinux:
 	rm -rf ./petalinux/blink/build
