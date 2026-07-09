@@ -80,6 +80,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -179,6 +182,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -278,6 +284,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -379,6 +388,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -486,6 +498,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;

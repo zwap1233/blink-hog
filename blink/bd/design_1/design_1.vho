@@ -74,8 +74,8 @@ COMPONENT design_1
     FIXED_IO_ps_srstb : INOUT STD_LOGIC;
     FIXED_IO_ps_clk : INOUT STD_LOGIC;
     FIXED_IO_ps_porb : INOUT STD_LOGIC;
-    led_0 : OUT STD_LOGIC;
-    led_1 : OUT STD_LOGIC
+    led_0_0 : OUT STD_LOGIC;
+    led_1_0 : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -107,8 +107,8 @@ your_instance_name : design_1
     FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
     FIXED_IO_ps_clk => FIXED_IO_ps_clk,
     FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-    led_0 => led_0,
-    led_1 => led_1
+    led_0_0 => led_0_0,
+    led_1_0 => led_1_0
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 
