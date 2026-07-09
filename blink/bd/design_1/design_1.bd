@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x262C8294E9C66599",
+      "boundary_crc": "0xB2AFE25D2AEF1F62",
       "device": "xc7z020clg400-1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -198,10 +198,10 @@
       }
     },
     "ports": {
-      "led_0_0": {
+      "led_0": {
         "direction": "O"
       },
-      "led_1_0": {
+      "led_1": {
         "direction": "O"
       }
     },
@@ -2316,13 +2316,13 @@
       "Blink_0_led_0": {
         "ports": [
           "Blink_0/led_0",
-          "led_0_0"
+          "led_0"
         ]
       },
       "Blink_0_led_1": {
         "ports": [
           "Blink_0/led_1",
-          "led_1_0"
+          "led_1"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
