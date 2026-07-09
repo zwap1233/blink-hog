@@ -96,9 +96,9 @@ module design_1_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   inout wire FIXED_IO_ps_porb,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire led_0_0,
+  output wire led_0,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire led_1_0
+  output wire led_1
 );
 
   design_1 inst (
@@ -123,8 +123,8 @@ module design_1_sv (
     .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
     .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
     .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-    .led_0_0(led_0_0),
-    .led_1_0(led_1_0)
+    .led_0(led_0),
+    .led_1(led_1)
   );
 
 endmodule

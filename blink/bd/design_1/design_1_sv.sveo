@@ -87,8 +87,8 @@ design_1_sv your_instance_name (
   .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb), // inout wire FIXED_IO_ps_srstb
   .FIXED_IO_ps_clk(FIXED_IO_ps_clk), // inout wire FIXED_IO_ps_clk
   .FIXED_IO_ps_porb(FIXED_IO_ps_porb), // inout wire FIXED_IO_ps_porb
-  .led_0_0(led_0_0), // output wire led_0_0
-  .led_1_0(led_1_0) // output wire led_1_0
+  .led_0(led_0), // output wire led_0
+  .led_1(led_1) // output wire led_1
 );
 // INST_TAG_END ------  End cut for WRAPPER INSTANTIATION Template  ------
 

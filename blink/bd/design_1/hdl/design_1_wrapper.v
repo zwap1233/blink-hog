@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Thu Jul  9 15:08:07 2026
+//Date        : Thu Jul  9 15:24:59 2026
 //Host        : cachyos-x8664 running 64-bit CachyOS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -32,8 +32,8 @@ module design_1_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    led_0_0,
-    led_1_0);
+    led_0,
+    led_1);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -55,8 +55,8 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output led_0_0;
-  output led_1_0;
+  output led_0;
+  output led_1;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -79,8 +79,8 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire led_0_0;
-  wire led_1_0;
+  wire led_0;
+  wire led_1;
 
   design_1 design_1_i
        (.DDR_addr(DDR_addr),
@@ -104,6 +104,6 @@ module design_1_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .led_0_0(led_0_0),
-        .led_1_0(led_1_0));
+        .led_0(led_0),
+        .led_1(led_1));
 endmodule
