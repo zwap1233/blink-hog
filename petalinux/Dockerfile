@@ -2,16 +2,11 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
-    apt-get install -yq sudo build-essential git nano vim\
-          python3-yaml libncursesw5 \
-          python3 man bash diffstat gawk chrpath wget cpio \
-          texinfo lzop apt-utils bc screen libncurses5-dev locales \
-          libc6-dev doxygen libssl-dev dos2unix xvfb x11-utils \
-          g++-multilib libssl-dev zlib1g-dev \
-          libtool libtool-bin procps python3-distutils pigz socat \
-          zstd iproute2 lz4 iputils-ping \
-          curl libtinfo5 net-tools xterm rsync u-boot-tools unzip zip lsb-release dnsutils
+RUN apt update && apt upgrade -y && \
+    apt install -y iproute2 gawk python3 python3-pip gcc git tar gzip unzip make net-tools \
+    libncurses-dev tftpd-hpa zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget diffstat \
+    chrpath socat xterm autoconf libtool texinfo gcc-multilib build-essential libsdl1.2-dev \
+    libglib2.0-dev screen pax gzip locales libtool-bin cpio lib32z1 lz4 zstd rsync bc lsb-release libncurses5-dev libtinfo5
 
 RUN rm -rf /var/lib/apt-lists/*
 RUN echo "dash dash/sh boolean false" | debconf-set-selections
@@ -26,7 +21,7 @@ RUN useradd -ms /bin/bash -p xilinx xilinx -u 1000 -g 1002 && \
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
-ENV LANG en_US.utf8
+ENV LANG=en_US.utf8
 
 WORKDIR /home/xilinx/work
 RUN chown -R xilinx:xilinx /home/xilinx/work
