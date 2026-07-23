@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Thu Jul  9 15:14:57 2026
+// Date        : Thu Jul 23 12:29:53 2026
 // Host        : cachyos-x8664 running 64-bit CachyOS
 // Command     : write_verilog -force -mode funcsim
-//               /home/wouter/Projects/blink-hog/blink/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_sim_netlist.v
+//               /home/wouter/Workspace/blink-hog/blink/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_sim_netlist.v
 // Design      : design_1_rst_ps7_0_100M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
