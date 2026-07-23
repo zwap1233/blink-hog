@@ -2,7 +2,7 @@ HOG_DO:=./Hog/Do
 PRJ:=blink
 PRJ_FILE:=./Projects/$(PRJ)/$(PRJ).xpr
 
-.PHONY: clean clean-petalinux
+.PHONY: clean clean-petalinux prj
 
 all: $(PRJ_FILE)
 	$(HOG_DO) WORKFLOW $(PRJ)
@@ -10,7 +10,7 @@ all: $(PRJ_FILE)
 gui: $(PRJ_FILE)
 	vivado $(PRJ_FILE)
 
-$(PRJ_FILE):
+prj $(PRJ_FILE):
 	$(HOG_DO) CREATE $(PRJ)
 
 clean-all: clean clean-petalinux
