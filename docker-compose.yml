@@ -5,8 +5,8 @@ services:
     hostname: petalinuxcontainer
     stdin_open: true
     tty: true
+    shm_size: 16G
 
     volumes:
-      - .:/home/xilinx/work
-      - ../bin:/home/xilinx/bin
+      - .:/home/xilinx/
       - /opt/xilinx/2025.2/Petalinux:/opt/xilinx/2025.2/Petalinux

@@ -2,9 +2,9 @@
 
 source /opt/xilinx/2025.2/Petalinux/settings.sh
 
-PRJ_NAME="blink"
+PRJ_NAME="blinkos"
 
-LAST_BIN="$(realpath $(ls -td -- ~/bin/*/ | head -n 1))"
+LAST_BIN="$(realpath $(ls -td -- ./bin/*/ | head -n 1))"
 XSA_FILE="$(find $LAST_BIN/*.xsa)"
 BIT_FILE="$(find $LAST_BIN/*.bit)"
 

@@ -6,7 +6,7 @@ RUN apt update && apt upgrade -y && \
     apt install -y iproute2 gawk python3 python3-pip gcc git tar gzip unzip make net-tools \
     libncurses-dev tftpd-hpa zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget diffstat \
     chrpath socat xterm autoconf libtool texinfo gcc-multilib build-essential libsdl1.2-dev \
-    libglib2.0-dev screen pax gzip locales libtool-bin cpio lib32z1 lz4 zstd rsync bc lsb-release libncurses5-dev libtinfo5
+    libglib2.0-dev screen pax gzip locales libtool-bin cpio lib32z1 lz4 zstd rsync bc lsb-release libncurses5-dev libtinfo5 dnsutils
 
 RUN rm -rf /var/lib/apt-lists/*
 RUN echo "dash dash/sh boolean false" | debconf-set-selections
@@ -23,9 +23,8 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 
 ENV LANG=en_US.utf8
 
-WORKDIR /home/xilinx/work
-RUN chown -R xilinx:xilinx /home/xilinx/work
-
+WORKDIR /home/xilinx/
+RUN chown -R xilinx:xilinx /home/xilinx/
 USER xilinx
 
 RUN echo "source /opt/xilinx/2025.2/Petalinux/settings.sh" >> ~/.bashrc
