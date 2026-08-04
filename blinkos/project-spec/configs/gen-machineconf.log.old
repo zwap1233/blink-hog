@@ -1,14 +1,14 @@
-2026-07-26 17:09:40,811 - [DEBUG] Using xsct from : /opt/xilinx/2025.2/Petalinux/components/xsct/bin/xsct
-2026-07-26 17:09:40,811 - [INFO] Getting Platform info from HW file
-2026-07-26 17:09:40,811 - [DEBUG] Using the soc_family specified by user:zynq
-2026-07-26 17:09:40,829 - [DEBUG] Hardware Configuration:
-2026-07-26 17:09:40,829 - [DEBUG] MACHINE     = "None"
-2026-07-26 17:09:40,829 - [DEBUG] DEVICE_ID   = "7z020"
-2026-07-26 17:09:40,829 - [DEBUG] SOC_FAMILY  = "zynq"
-2026-07-26 17:09:40,829 - [DEBUG] SOC_VARIANT = ""
-2026-07-26 17:09:40,829 - [INFO] Silentconfig project
-2026-07-26 17:09:40,829 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/xilinx/blinkos/project-spec/configs/config conf /home/xilinx/blinkos/project-spec/configs/configs/Kconfig
-2026-07-26 17:09:40,832 - [DEBUG] *
+2026-08-04 07:43:02,919 - [DEBUG] Using xsct from : /opt/xilinx/2025.2/Petalinux/components/xsct/bin/xsct
+2026-08-04 07:43:02,919 - [INFO] Getting Platform info from HW file
+2026-08-04 07:43:02,919 - [DEBUG] Using the soc_family specified by user:zynq
+2026-08-04 07:43:02,935 - [DEBUG] Hardware Configuration:
+2026-08-04 07:43:02,935 - [DEBUG] MACHINE     = "None"
+2026-08-04 07:43:02,935 - [DEBUG] DEVICE_ID   = "7z020"
+2026-08-04 07:43:02,935 - [DEBUG] SOC_FAMILY  = "zynq"
+2026-08-04 07:43:02,935 - [DEBUG] SOC_VARIANT = ""
+2026-08-04 07:43:02,935 - [INFO] Silentconfig project
+2026-08-04 07:43:02,936 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/xilinx/blinkos/project-spec/configs/config conf /home/xilinx/blinkos/project-spec/configs/configs/Kconfig
+2026-08-04 07:43:02,941 - [DEBUG] *
 * PetaLinux System Configuration
 *
 ZYNQ Configuration (SYSTEM_ZYNQ) [Y/?] y
@@ -42,11 +42,11 @@ choice[1]: 1
 * Memory Settings
 *
 Primary Memory
-> 1. ps7_ddr_0 (SUBSYSTEM_MEMORY_PS7_DDR_0_SELECT)
+> 1. ps7_ddr_0 (SUBSYSTEM_MEMORY_PS7_DDR_0_SELECT) (NEW)
   2. manual (SUBSYSTEM_MEMORY_MANUAL_SELECT)
-choice[1-2?]: System memory base address (SUBSYSTEM_MEMORY_PS7_DDR_0_BASEADDR) [0x0] 
-System memory size (SUBSYSTEM_MEMORY_PS7_DDR_0_SIZE) [0x20000000] 
-u-boot text base address (SUBSYSTEM_MEMORY_PS7_DDR_0_U__BOOT_TEXTBASE_OFFSET) [0x4000000] 
+choice[1-2?]: System memory base address (SUBSYSTEM_MEMORY_PS7_DDR_0_BASEADDR) [0x0] (NEW) 
+System memory size (SUBSYSTEM_MEMORY_PS7_DDR_0_SIZE) [0x20000000] (NEW) 
+u-boot text base address (SUBSYSTEM_MEMORY_PS7_DDR_0_U__BOOT_TEXTBASE_OFFSET) [0x4000000] (NEW) 
 *
 * Serial Settings
 *
@@ -68,37 +68,14 @@ choice[1-7?]: *
 * Ethernet Settings
 *
 Primary Ethernet
-> 1. ps7_ethernet_0 (SUBSYSTEM_ETHERNET_PS7_ETHERNET_0_SELECT)
-  2. manual (SUBSYSTEM_ETHERNET_MANUAL_SELECT)
-choice[1-2?]: Randomise MAC address (SUBSYSTEM_ETHERNET_PS7_ETHERNET_0_MAC_AUTO) [N/y/?] 
-  Ethernet MAC address (SUBSYSTEM_ETHERNET_PS7_ETHERNET_0_MAC) [00:0a:35:00:1e:53] 
-Obtain IP address automatically (SUBSYSTEM_ETHERNET_PS7_ETHERNET_0_USE_DHCP) [Y/n/?] 
+> 1. manual (SUBSYSTEM_ETHERNET_MANUAL_SELECT)
+choice[1]: 1
 *
 * Flash Settings
 *
 Primary Flash
-> 1. ps7_qspi_0 (SUBSYSTEM_FLASH_PS7_QSPI_0_SELECT)
-  2. manual (SUBSYSTEM_FLASH_MANUAL_SELECT)
-choice[1-2?]: Advanced Flash Auto Configuration (SUBSYSTEM_FLASH__ADVANCED_AUTOCONFIG) [N/y/?] 
-*
-* partition 0
-*
-name (SUBSYSTEM_FLASH_PS7_QSPI_0_PART0_NAME) [qspi-boot] 
-size (SUBSYSTEM_FLASH_PS7_QSPI_0_PART0_SIZE) [0x500000] 
-*
-* partition 1
-*
-name (SUBSYSTEM_FLASH_PS7_QSPI_0_PART1_NAME) [qspi-kernel] 
-size (SUBSYSTEM_FLASH_PS7_QSPI_0_PART1_SIZE) [0xA80000] 
-*
-* partition 2
-*
-name (SUBSYSTEM_FLASH_PS7_QSPI_0_PART2_NAME) [qspi-bootenv] 
-size (SUBSYSTEM_FLASH_PS7_QSPI_0_PART2_SIZE) [0x20000] 
-*
-* partition 3
-*
-name (SUBSYSTEM_FLASH_PS7_QSPI_0_PART3_NAME) [] 
+> 1. manual (SUBSYSTEM_FLASH_MANUAL_SELECT)
+choice[1]: 1
 *
 * SD/SDIO Settings
 *
@@ -244,9 +221,28 @@ user layer 0 (USER_LAYER_0) []
 #
 # configuration written to /home/xilinx/blinkos/project-spec/configs/config
 #
-2026-07-26 17:09:40,864 - [INFO] Silentconfig rootfs
-2026-07-26 17:09:40,865 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/xilinx/blinkos/project-spec/configs/rootfs_config conf /home/xilinx/blinkos/project-spec/configs/rootfsconfigs/Kconfig
-2026-07-26 17:09:40,870 - [DEBUG] *
+2026-08-04 07:43:02,980 - [DEBUG] xsct -sdx -nodisp /home/xilinx/blinkos/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/petalinux_hsm.tcl get_flash_width_parts /home/xilinx/blinkos/project-spec/configs/config /home/xilinx/blinkos/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/data/ipinfo.yaml /home/xilinx/blinkos/project-spec/hw-description/system.xsa /home/xilinx/blinkos/project-spec/configs/flash_parts.txt
+2026-08-04 07:43:07,644 - [DEBUG] 
+
+****** Software Commandline Tool (XSCT) v2025.2.0
+  **** SW Build 6298600 on Thu Nov 13 00:55:04 MST 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+WARNING: sdtgen package cannot be loaded. System Device tree commands will not 
+ be available
+
+WARNING: Failed in finding /opt/xilinx/2025.2/Petalinux/components/xsct/data/system-device-tree-xlnx/device_tree/data/device_tree.tcl path.
+
+
+2026-08-04 07:43:07,653 - [INFO] Silentconfig rootfs
+2026-08-04 07:43:07,654 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/xilinx/blinkos/project-spec/configs/rootfs_config conf /home/xilinx/blinkos/project-spec/configs/rootfsconfigs/Kconfig
+2026-08-04 07:43:07,667 - [DEBUG] *
 * Configuration
 *
 *
@@ -3526,7 +3522,10 @@ Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux]
 #
 # configuration written to /home/xilinx/blinkos/project-spec/configs/rootfs_config
 #
-2026-07-26 17:09:40,875 - [INFO] Generating configuration files
-2026-07-26 17:09:40,876 - [DEBUG] No multilibs enabled.
-2026-07-26 17:09:40,876 - [DEBUG] No multilibs enabled.
-2026-07-26 17:09:40,885 - [DEBUG] Shutting down bitbake
+2026-08-04 07:43:07,674 - [INFO] Generating configuration files
+2026-08-04 07:43:07,676 - [DEBUG] No multilibs enabled.
+2026-08-04 07:43:07,676 - [DEBUG] No multilibs enabled.
+2026-08-04 07:43:07,677 - [INFO] Adding user layers
+2026-08-04 07:43:07,677 - [DEBUG] Shutting down bitbake
+2026-08-04 07:43:07,677 - [DEBUG] Adding layer: /home/xilinx/blinkos/project-spec/meta-user
+2026-08-04 07:43:07,677 - [DEBUG] bitbake-layers -F add-layer /home/xilinx/blinkos/project-spec/meta-user
