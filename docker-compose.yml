@@ -1,12 +1,12 @@
 services:
   yoctocontainer:
     image: petalinuxcontainer
-    container_name: petalinuxcontainer
-    hostname: petalinuxcontainer
+    container_name: blinkcontainer
+    hostname: blinkcontainer
     stdin_open: true
     tty: true
     shm_size: 16G
 
     volumes:
-      - .:/home/xilinx/
-      - /opt/xilinx/2025.2/Petalinux:/opt/xilinx/2025.2/Petalinux
+      - .:/home/xilinx/work
+      - /opt/xilinx:/opt/xilinx
