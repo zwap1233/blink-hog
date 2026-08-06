@@ -31,6 +31,7 @@ USER xilinx
 RUN echo "source /opt/xilinx/2025.2/Petalinux/settings.sh" >> ~/.bashrc
 RUN echo "source /opt/xilinx/2025.2/Vivado/settings64.sh" >> ~/.bashrc
 RUN echo "source /opt/xilinx/2025.2/Vitis/settings64.sh" >> ~/.bashrc
+#RUN echo "export DISPLAY=:0" >> ~/.bashrc
 
 RUN git config --global user.email "wouter@eldarmail.nl" && git config --global user.name "Wouter Schoenmakers"
 
